@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Graph Theory Project</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #2c3e50; 
+      color: #ecf0f1; 
+      margin: 0;
+      padding: 0;
+    }
+  
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #3498db; 
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      background-color: #34495e; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .alert-primary {
+      background-color: #2980b9; 
+      color: #fff;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .input-group {
+      margin-bottom: 20px;
+    }
+  
+    #canvas-outer {
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    #canvas {
+      border: 2px solid #3498db; 
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #2c3e50; 
+    }
+  </style>
+  
+</head>
+
+<body>
+  <h1>Graph Theory Final Project</h1>
+
+  <div class="container">
+
+    <div>
+      <p>G-enzyme set: AUCG AUG G CU ACUAUACG</p>
+      <p>UC-enzyme set: GGAC U AU GAU C U AC GC AU</p>
+    </div>
+
+    <div>
+      <p><strong>Enter as shown in textbook, or in example above in respective fields. Use spaces instead of commas</strong></p>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Input Enzyme Set</span>
+      </div>
+      <input type="text" placeholder="G-enzyme input" aria-label="Recipient's username" class="form-control"
+        id="G-enzyme-set">
+      <input type="text" placeholder="U.C-enzyme input" aria-label="U.C.-enzyme set" class="form-control"
+        id="UC-enzyme-set">
+
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick="takesInput()">Generate Chain
+        </button>
+      </div>
+    </div>
+
+    <div class="preliminary">
+      <h2><span class="badge badge-primary">Information</span></h2>
+      <p id="g-enzyme"></p>
+      <p id="uc-enzyme"></p>
+      <p id="refragmented-g-set"></p>
+      <p id="refragmented-uc-set"></p>
+      <p id="single-fragments"></p>
+      <p id="interior-extended-bases"></p>
+      <p id="non-single-fragments"></p>
+    </div>
+
+    <div class="graph-construction">
+      <h2><span class="badge badge-primary">Graph</span></h2>
+      <p id="nodes"></p>
+      <ul id="nodes-and-arcs"></ul>
+      <p>All possible original RNA chains obtained in this case are:</p>
+      <ul id="all-possible-paths"></ul>
+    </div>
+
+    <div id="canvas-outer">
+      <div id="canvas">
+        <p>Mutliple edges are shown by a bolded ege</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v3.js"></script>
+  <script src="jsnetworkx.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+
+</body>
+
+</html>
